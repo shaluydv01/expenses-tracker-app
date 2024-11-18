@@ -10,7 +10,7 @@ const Login = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      email: "",
+    email: "",
       password: "",
     },
   });
