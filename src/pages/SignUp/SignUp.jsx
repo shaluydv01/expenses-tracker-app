@@ -1,24 +1,21 @@
 import React from "react";
 import "./SignUp.css";
 import { useForm } from "react-hook-form";
+import { Link } from 'react-router-dom'
 
 const SignUp = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    defaultValues: {
-      email: "",
-      password: "",
-    },
-  });
+  } = useForm();
 
-  console.log(errors);
+  // console.log(errors);
 
   return (
     <>
       <div className="signup-main-container">
+        <p id="go-to-home">&#11160; Go to <Link to={"/"} >Home</Link> page</p>
         <p className="signup-logo-text">myExpenses</p>
         <div className="main-form-container">
           <form onSubmit={handleSubmit((data) => console.log(data))}>
@@ -108,7 +105,7 @@ const SignUp = () => {
 
             <p>{errors.password?.message}</p>
 
-            <button type="submit" className="signUp-button" onClick={()=>"./user"}>
+            <button type="submit" className="signUp-button">
               Sign Up
             </button>
           </form>

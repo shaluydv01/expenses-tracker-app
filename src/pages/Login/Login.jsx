@@ -8,16 +8,22 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({defaultValues: {
-    email: "",
-    password: ""
-  }});
+  } = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
 
   console.log(errors);
 
   return (
     <>
       <div className="login-container">
+        <p id="go-to-home">
+          &#11160; Go to <Link to={"/"}>Home</Link> page
+        </p>
+
         <div className="login-page-text">
           <p className="larger-text">myExpenses</p>
           <p className="smaller-text">
@@ -60,7 +66,9 @@ const Login = () => {
             <p className="forget-text frm-text">
               <Link>Forget Password ?</Link>
             </p>
-            <button className="create-btn btn"><Link to={"/sign-up"}>Create Account</Link></button>
+            <button className="create-btn btn">
+              <Link to={"/sign-up"}>Create Account</Link>
+            </button>
           </form>
         </div>
       </div>

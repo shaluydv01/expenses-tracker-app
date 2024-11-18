@@ -4,7 +4,25 @@
   height: 100vh;
   align-items: center;
   flex-direction: column;
-  margin: 10% 5%;
+  margin: 5% 5%;
+}
+
+#go-to-home {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#go-to-home a {
+  text-decoration: none;
+}
+
+#go-to-home a:hover{
+  text-decoration: underline;
+  text-decoration-color: red;
+  transition: all 2s ease;
 }
 
 .signup-logo-text {
@@ -13,15 +31,15 @@
   font-weight: bold;
 }
 
-.larger-form-para{
-    font-size: 30px;
-    font-weight: bold;
+.larger-form-para {
+  font-size: 30px;
+  font-weight: bold;
 }
 
-.smaller-form-para{
-    font-size: 16px;
-    color: #626262;
-    margin: 2% 0;
+.smaller-form-para {
+  font-size: 16px;
+  color: #626262;
+  margin: 2% 0;
 }
 
 .main-form-container {
@@ -70,25 +88,28 @@
   padding: 2%;
 }
 
-.date-select, .gender-select{
-    font-size: 16px;
-    font-weight: bold;
+.date-select,
+.gender-select {
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.date-select{
-    padding: 0 2%;
+.date-select {
+  padding: 0 2%;
 }
 
 #email,
-#password, #date {
+#password,
+#date {
   padding: 2%;
   font-size: 16px;
   margin: 2%;
   width: 96%;
 }
 
-#gender-text, #date-text{
-    color: #626262;
+#gender-text,
+#date-text {
+  color: #626262;
 }
 
 .signUp-button {
@@ -107,9 +128,9 @@
   border-radius: 4px;
 }
 
-.signUp-button:hover{
-border-radius: 24px;
-background-color: black;
-transition: background 0.3s ease-in-out;
-transform: scale(1.1);
+.signUp-button:hover {
+  border-radius: 24px;
+  background-color: black;
+  transition: background 0.3s ease-in-out;
+  transform: scale(1.1);
 }
