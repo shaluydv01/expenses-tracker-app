@@ -18,7 +18,7 @@ const Home = () => {
           </div>
           <div className="image-container">
             <img
-              src="../public/manImage.png"
+              src="/images/manImage.png"
               alt="..."
               className="cartoon-img"
             />
