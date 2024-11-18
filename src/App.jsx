@@ -39,10 +39,3 @@ const App = () => {
           <Route path="/help" element={<Help />} />
           <Route path="/user" element={<User />} />
           <Route path="/record" element={<Record item={item} />}></Route>
-        </Routes>
-      </Router>
-    </>
-  );
-};
-
-export default App;
