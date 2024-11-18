@@ -18,7 +18,7 @@ const Home = () => {
           </div>
           <div className="image-container">
             <img
-              src="./src/assets/expenses-removebg-preview.png"
+              src="./src/assets/piclumen-1731937520852.png"
               alt="..."
               className="cartoon-img"
             />
