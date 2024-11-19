@@ -3,8 +3,7 @@
     justify-content: space-between;
     gap: 2rem;
     align-items: center;
-    height: 100vh;
-    margin: 0 5%;
+    margin: 4% 0%;
     box-sizing: border-box;
 }
 
@@ -21,14 +20,21 @@
     margin-top: 1rem;
 }
 
-.ucc-1 .item-box-input{
+.ucc-1 .item-box-input, #total-legend{
     width: 50%;
 }
 
-.ucc-1 .item-box-input input{
+.ucc-1 .item-box-input input, #total-legend{
 width: 100%;
 margin-top: 0.5rem;
 padding: 1rem 1.5rem;
+}
+
+#total-legend{
+    font-size: 16px;
+    text-align: center;
+    background-color: coral;
+    font-weight: bold;
 }
 
 .btnn{
