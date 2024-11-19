@@ -11,7 +11,7 @@ const Record = ({ item }) => {
 
             return (
               <>
-              <table className="record-table">
+              <table key={d.id} className="record-table">
                 <thead className="record-table-head">
                   <tr>
                     <th>Items</th>
@@ -20,7 +20,7 @@ const Record = ({ item }) => {
                     <th>Amount in Rs.</th>
                   </tr>
                 </thead>
-                <tbody key={d.id} className="record-table-body">
+                <tbody className="record-table-body">
                   <tr>
                     <td>{d.fill1}</td>
                     <td>Rs.{d.amount1}</td>
@@ -31,7 +31,6 @@ const Record = ({ item }) => {
                   </tr>
                   <tr id="total-amount">
                     <td>Total</td>
-                    {/* <td>{d.Rs}</td> */}
                     <td>Rs.{amount1 + amount2}</td>
                   </tr>
                 </tbody>
