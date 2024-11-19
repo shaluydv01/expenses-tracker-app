@@ -43,6 +43,9 @@ const Navbar = () => {
           <li>
             <Link to={"/help"} onClick={closeDrawer}>Help</Link>
           </li>
+          <li>
+            <Link to={"/user"} onClick={closeDrawer}>User</Link>
+          </li>
         </ul>
 
         <button onClick={toggleMenu} className="menu-icon">
