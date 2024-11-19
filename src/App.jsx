@@ -6,7 +6,7 @@ import Login from "./pages/Login/Login";
 import Help from "./pages/Help/Help";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignUp from "./pages/SignUp/SignUp";
-import User from "./pages/User/User";
+import User from "./pages/User/User"
 
 
 const App = () => {
