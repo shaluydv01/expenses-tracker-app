@@ -35,7 +35,7 @@ const Navbar = () => {
             <Link to={"/contact"} onClick={closeDrawer}>Contact</Link>
           </li>
           <li>
-            <Link to={"/login/sign-up"} onClick={closeDrawer}>Login</Link>
+            <Link to={"/login"} onClick={closeDrawer}>Login</Link>
           </li>
           <li>
             <Link to={"/sign-up"} onClick={closeDrawer}>Sign-Up</Link>
