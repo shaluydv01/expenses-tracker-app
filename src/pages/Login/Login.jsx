@@ -1,29 +1,59 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { AppContext } from "../../context/App_context";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const { login } = useContext(AppContext);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
     defaultValues: {
-    email: "",
+      gmail: "",
       password: "",
     },
   });
 
-  console.log(errors);
+  const loginHandler = async (data) => {
+    // e.preventDefault();
+    const { gmail, password } = data;
+    const result = await login(gmail, password);
+
+    toast.success(result.data.message, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
+
+    // console.log(result.data);
+
+    setTimeout(() => {
+      navigate('/');
+    }, 5000);
+  };
 
   return (
     <>
-      <div className="login-container">
-        <p id="go-to-home">
-          &#11160; Go to <Link to={"/"}>Home</Link> page
-        </p>
+      <ToastContainer />
 
+      <p id="go-to-home">
+        &#11160; Go to <Link to={"/"}>Home</Link> page
+      </p>
+      <div className="login-container">
         <div className="login-page-text">
           <p className="larger-text">myExpenses</p>
           <p className="smaller-text">
@@ -34,21 +64,18 @@ const Login = () => {
         <div className="form-content-container">
           <form
             className="form-container"
-            onSubmit={handleSubmit((data) => {
-              console.log(data);
-            })}
+            onSubmit={handleSubmit(loginHandler)} // Use handleSubmit to manage the form
           >
             <input
+              {...register("gmail", { required: "This is required...😊" })}
               className="input-login"
               type="email"
-              {...register("email", { required: "This is required...😊" })}
               id="email"
               placeholder="Enter your email"
             />
-            <p>{errors.email?.message}</p>
+            {errors.gmail && <p>{errors.gmail.message}</p>}{" "}
+            {/* Error handling for gmail */}
             <input
-              className="input-login"
-              type="password"
               {...register("password", {
                 required: "This is required...😊",
                 minLength: {
@@ -56,10 +83,13 @@ const Login = () => {
                   message: "Required length is 8",
                 },
               })}
+              className="input-login"
+              type="password"
               id="password"
               placeholder="Password"
             />
-            <p>{errors.password?.message}</p>
+            {errors.password && <p>{errors.password.message}</p>}{" "}
+            {/* Error handling for password */}
             <button type="submit" className="login-btn btn">
               Login
             </button>

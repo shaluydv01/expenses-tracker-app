@@ -87,6 +87,29 @@
     transition: background-color 1s ease, color 1s ease;
 }
 
+/*----------------------------Go to Home---------------*/
+
+#go-to-home {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  #go-to-home a {
+    text-decoration: none;
+  }
+  
+  #go-to-home a:hover{
+    text-decoration: underline;
+    text-decoration-color: red;
+    transition: all 2s ease;
+  }
+
+
+/*--------------------------Responsiveness----------------*/
+
 @media (max-width: 960px) {
     .login-container{
         gap: 5rem;
