@@ -1,19 +1,20 @@
-import React from "react";
-import Home from "./pages/Home/Home";
-import About from "./pages/About/About";
-import Contact from "./pages/Contact/Contact";
-import Login from "./pages/Login/Login";
-import Help from "./pages/Help/Help";
+import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SignUp from "./pages/SignUp/SignUp";
-import User from "./pages/User/User"
 
+// Lazy load components to optimize the initial load
+const Home = React.lazy(() => import("./pages/Home/Home"));
+const About = React.lazy(() => import("./pages/About/About"));
+const Contact = React.lazy(() => import("./pages/Contact/Contact"));
+const Login = React.lazy(() => import("./pages/Login/Login"));
+const SignUp = React.lazy(() => import("./pages/SignUp/SignUp"));
+const Help = React.lazy(() => import("./pages/Help/Help"));
+const User = React.lazy(() => import("./pages/User/User"));
 
 const App = () => {
-  
   return (
-    <>
-      <Router>
+    <Router>
+      {/* Suspense fallback shows while the component is loading */}
+      <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -23,8 +24,8 @@ const App = () => {
           <Route path="/help" element={<Help />} />
           <Route path="/user" element={<User />} />
         </Routes>
-      </Router>
-    </>
+      </Suspense>
+    </Router>
   );
 };
 
