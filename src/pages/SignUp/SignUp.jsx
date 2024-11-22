@@ -18,60 +18,30 @@ const SignUp = () => {
   } = useForm();
 
   // Form submission handler
-  const registerHandler = async (data) => {
-    const { fname, lname, date, gender, email, password } = data;
-    try {
-      // Call the signUp API function
-      const result = await signUp(fname, lname, date, gender, email, password);
+  const registerHandler = async (datas) => {
+    // Extract data from the form submission
+    const { fname, lname, date, gender, email, password } = datas;
 
-      // Debugging: Check if the result is correct
-      console.log("SignUp Result:", result);
+    // Call the signUp API function
+    const result = await signUp(fname, lname, date, gender, email, password);
 
-      if (result && result.data) {
-        // Show success toaster
-        toast.success(result.data.message || "Registration successful!", {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-          transition: Bounce,
-        });
+    toast.success(result.data.message, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
 
-        // Redirect to login page after 5 seconds
-        setTimeout(() => {
-          navigate("/login"); // Redirect to login page
-        }, 5000);
-      } else {
-        toast.error("Something went wrong. Please try again!", {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-          transition: Bounce,
-        });
-      }
-    } catch (error) {
-      console.error("Sign up error:", error);
-      toast.error("An error occurred during sign-up. Please try again.", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        transition: Bounce,
-      });
-    }
+    setTimeout(() => {
+      navigate("/login"); // Navigate to the homepage after 3 seconds
+    }, 3000);
+
+    // console.log("SignUp Result:", result); // Debugging the result
   };
 
   return (
@@ -88,64 +58,71 @@ const SignUp = () => {
           <form onSubmit={handleSubmit(registerHandler)}>
             <p className="larger-form-para">Create a new account</p>
             <p className="smaller-form-para">It's quick and easy.</p>
+            
+            {/* Name Fields */}
             <fieldset className="name-container">
               <input
                 type="text"
-                {...register("fname", { required: "First Name is required" })}
+                {...register("fname", { required: "This is required...😊" })}
                 id="fname"
                 placeholder="First Name"
               />
               <input
                 type="text"
-                {...register("lname", { required: "Last Name is required" })}
+                {...register("lname", { required: "This is required...😊" })}
                 id="lname"
                 placeholder="Last Name"
               />
             </fieldset>
             <p>{errors.fname?.message}</p>
-            <p>{errors.lname?.message}</p>
 
+            {/* Date of Birth */}
             <fieldset className="date-select">
               <legend id="date-text">Date of birth ?</legend>
               <input
                 type="date"
-                {...register("date", { required: "Date of birth is required" })}
+                {...register("date", { required: "This is required...😊" })}
                 id="date"
               />
             </fieldset>
             <p>{errors.date?.message}</p>
 
+            {/* Gender Selection */}
             <fieldset className="gender-select">
               <legend id="gender-text">Gender ?</legend>
               <label htmlFor="male">Male</label>
               <input
                 type="radio"
+                name="gender"
                 value="male"
-                {...register("gender", { required: "Gender is required" })}
+                {...register("gender", { required: "This is required...😊" })}
                 id="male"
               />
               <label htmlFor="female">Female</label>
               <input
                 type="radio"
+                name="gender"
                 value="female"
-                {...register("gender", { required: "Gender is required" })}
+                {...register("gender", { required: "This is required...😊" })}
                 id="female"
               />
               <label htmlFor="other">Other</label>
               <input
                 type="radio"
+                name="gender"
                 value="other"
-                {...register("gender", { required: "Gender is required" })}
+                {...register("gender", { required: "This is required...😊" })}
                 id="other"
               />
             </fieldset>
             <p>{errors.gender?.message}</p>
 
+            {/* Email Input */}
             <fieldset className="email-container">
               <input
                 type="email"
                 {...register("email", {
-                  required: "Email is required",
+                  required: "This is required...😊",
                   pattern: {
                     value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
                     message: "Invalid email format",
@@ -157,14 +134,15 @@ const SignUp = () => {
             </fieldset>
             <p>{errors.email?.message}</p>
 
+            {/* Password Input */}
             <fieldset className="password-container">
               <input
                 type="password"
                 {...register("password", {
-                  required: "Password is required",
+                  required: "This is required...😊",
                   minLength: {
                     value: 8,
-                    message: "Password must be at least 8 characters long",
+                    message: "Password must be at least 8 characters long...!",
                   },
                 })}
                 id="password"

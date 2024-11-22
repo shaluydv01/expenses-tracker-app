@@ -1,13 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./About.css";
 
 const About = () => {
   return (
     <>
-      <div className="about-main-container">
+      <div className="top-header">
         <h1 className="about-header">About myExpenses</h1>
+      </div>
+      <div className="about-main-container">
         <div className="banner-slider">
           <div className="deepika-slide">
+            {/* <p id="go-to-home">
+              &#11160; Go to <Link to={"/"}>Home</Link> page
+            </p> */}
             <p>
               Ready to take control of your finances? Start tracking your
               expenses today!
@@ -66,19 +72,28 @@ const About = () => {
             everyone aiming to stay on top of their finances.
           </p>
         </div>
+
+        <h1 id="creators-header">Introducing the creators or contributors.</h1>
         <div className="team-section">
-          <h1>Introducing the creators or contributors.</h1>
-          <div className="anju">
+          <div className="member-img anju">
             <img src="/images/members/anju.png" alt="" />
+            <p>Anju Chauhan</p>
+            <p>B.Tech(CSE)</p>
           </div>
-          <div className="shalu">
+          <div className="member-img shalu">
             <img src="/images/members/shalu.png" alt="shalu" />
+            <p>Shalu Yadav</p>
+            <p>B.Tech(CSE)</p>
           </div>
-          <div className="deepika">
+          <div className="member-img deepika">
             <img src="/images/members/deepika.png" alt="deepika" />
+            <p>Deepika Yadav</p>
+            <p>B.Tech(CSE)</p>
           </div>
-          <div className="tulsi">
-            <img src="/images/members/tulsi.jpg" alt="tulsi" />
+          <div className="member-img tulsi">
+            <img src="/images/members/tulsi.png" alt="tulsi" />
+            <p>Tulsi Kumari</p>
+            <p>B.Tech(CSE)</p>
           </div>
         </div>
       </div>

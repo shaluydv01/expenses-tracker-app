@@ -5,8 +5,12 @@ import { toast } from "react-toastify";
 
 const App_State = (props) => {
   const url = "http://localhost:5000/api";
-  
-  const [token, setToken] = useState(localStorage.getItem('token') || "");
+
+  useEffect(() => {
+    // login("johndoe@example.com", "securepassword");
+  }, []);
+
+  const [token, setToken] = useState(localStorage.getItem("token") || "");
 
   useEffect(() => {
     // If a token exists in localStorage, try to auto-login or initialize login
@@ -16,89 +20,34 @@ const App_State = (props) => {
   }, [token]);
 
   // Register function
-  const signUp = async (fname, lname, gender, date, gmail, password) => {
-    try {
-      const api = await axios.post(
-        `${url}/signUp`,
-        { fname, lname, date, gender, gmail, password },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
-
-      if (api.data.message) {
-        toast.success(api.data.message, {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          theme: "dark",
-        });
+  const signUp = async (fname, lname, date, gender, email, password) => {
+    const api = await axios.post(
+      `${url}/signUp`,
+      { fname, lname, date, gender, email, password },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
       }
-
-      return api.data;  // Returning response data (such as success message, etc.)
-    } catch (error) {
-      console.error("Sign-up Failed", error);
-      toast.error("Sign-up failed. Please try again later.", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "dark",
-      });
-    }
+    );
   };
 
   // Login function
-  const login = async (gmail, password) => {
-    try {
-      const api = await axios.post(
-        `${url}/login`,
-        { gmail, password },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
-
-      // Store the token in localStorage and set it in state
-      if (api.data.token) {
-        setToken(api.data.token);
-        localStorage.setItem("token", api.data.token);  // Store token to keep user logged in after refresh
-        axios.defaults.headers["Authorization"] = `Bearer ${api.data.token}`;  // Set authorization header
-        toast.success(`Welcome ${api.data.message}`, {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          theme: "dark",
-        });
+  const login = async (email, password) => {
+    const api = await axios.post(
+      `${url}/login`,
+      { email, password },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
       }
-
-      return api.data;
-    } catch (error) {
-      console.log("Login Failed", error);
-      toast.error("Invalid credentials. Please try again.", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "dark",
-      });
-    }
+    );
+    setToken(api.data.token);
+    return api;
+    //Console.log("Login data", api);
   };
 
   // Logout function (clear token)

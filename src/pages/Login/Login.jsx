@@ -10,22 +10,24 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useContext(AppContext);
+  // const navigate = useNavigate();
 
+  // Use react-hook-form to handle form state and validation
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
     defaultValues: {
-      gmail: "",
+      email: "",
       password: "",
     },
   });
 
+  // Updated login handler using handleSubmit to get form data
   const loginHandler = async (data) => {
-    // e.preventDefault();
-    const { gmail, password } = data;
-    const result = await login(gmail, password);
+    const { email, password } = data; // Access the email and password from the form data
+    const result = await login(email, password);
 
     toast.success(result.data.message, {
       position: "top-right",
@@ -39,11 +41,11 @@ const Login = () => {
       transition: Bounce,
     });
 
-    // console.log(result.data);
-
     setTimeout(() => {
-      navigate('/');
-    }, 5000);
+      navigate("/");
+    }, 3000);
+
+    // console.log(result.data);
   };
 
   return (
@@ -64,17 +66,18 @@ const Login = () => {
         <div className="form-content-container">
           <form
             className="form-container"
-            onSubmit={handleSubmit(loginHandler)} // Use handleSubmit to manage the form
+            onSubmit={handleSubmit(loginHandler)} // Use handleSubmit to manage form submission
           >
             <input
-              {...register("gmail", { required: "This is required...😊" })}
+              {...register("email", { required: "This is required...😊" })}
               className="input-login"
               type="email"
               id="email"
               placeholder="Enter your email"
             />
-            {errors.gmail && <p>{errors.gmail.message}</p>}{" "}
-            {/* Error handling for gmail */}
+            {errors.email && <p>{errors.email.message}</p>}
+            {/* Error handling for email */}
+
             <input
               {...register("password", {
                 required: "This is required...😊",
@@ -88,8 +91,9 @@ const Login = () => {
               id="password"
               placeholder="Password"
             />
-            {errors.password && <p>{errors.password.message}</p>}{" "}
+            {errors.password && <p>{errors.password.message}</p>}
             {/* Error handling for password */}
+
             <button type="submit" className="login-btn btn">
               Login
             </button>
