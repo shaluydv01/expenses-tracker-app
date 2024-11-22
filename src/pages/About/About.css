@@ -1,0 +1,102 @@
+.about-main-container{
+    background-color: #0333;
+    width: 100%;
+    height: 100%;
+}
+.about-mission-container{
+    display: flex;
+    margin:2% 5%;
+}
+
+.about-text-container{
+    align-content: center;
+}
+
+.about-text-container h2{
+    text-align: center;
+    font-size: 32px;
+    color: #037E89;
+    margin-bottom: 20px;
+}
+.about-text-container .about-para{
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    padding-right: 20px;
+}
+.about-header{
+    padding: 1.3rem;
+    background-color: white;
+    margin: 0 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.about-img-container{
+    
+}
+
+.about-container-image{
+    width: 400px;
+    height: 300px;
+    border-radius: 15px;
+
+}
+/* features */
+.main-features{
+    margin: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.feature-container h1{
+    text-align: center;
+    font-size: 35px;
+    color: #037E89;
+}
+.card-feature1{
+    border: 2px solid #037E89;
+    width: 20%;
+    background-color: #fff;
+}
+.card-feature1 p{
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+/* target-audience */
+.about-target-container {
+    width: 84%;
+    margin: 30px auto;
+    padding: 25px 15px;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    border: 2px solid #037E89;
+    border-radius: 15px;
+    background: linear-gradient(to right, rgb(130, 122, 241) 10%, rgb(240, 190, 96) );
+}
+
+.about-target-container .inspired{
+    font-size: 16px;
+    color: #333;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+/* team section */
+
+.team-section h1{
+    text-align: center;
+    color: #037E89;
+    font-size: 30px;
+}
+.team-section img{
+    width: 400px;
+    height: auto;
+}
+
