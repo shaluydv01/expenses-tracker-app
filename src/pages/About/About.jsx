@@ -25,7 +25,7 @@ const About = () => {
           </div>
           <div className="about-img-container">
             <img
-              src="./public/WhatsApp Image 2024-11-21 at 14.49.08.jpeg"
+              src="/public/WhatsApp Image 2024-11-21 at 14.49.08.jpeg"
               alt="..."
               className="about-container-image"
             />
@@ -69,16 +69,16 @@ const About = () => {
         <div className="team-section">
           <h1>Introducing the creators or contributors.</h1>
           <div className="anju">
-            <img src=".\public\images\members\anju.png" alt="" />
+            <img src="/public/images/members/anju.png" alt="" />
           </div>
           <div className="shalu">
-            <img src=".\public\images\members\shalu.png" alt="shalu" />
+            <img src="/public/images/members/shalu.png" alt="shalu" />
           </div>
           <div className="deepika">
-            <img src="" alt="deepika" />
+            <img src="/public/images/members/deepika.png" alt="deepika" />
           </div>
           <div className="tulsi">
-            <img src="./public/images/members/tulsi.jpg" alt="tulsi" />
+            <img src="/public/images/members/tulsi.jpg" alt="tulsi" />
           </div>
         </div>
       </div>
