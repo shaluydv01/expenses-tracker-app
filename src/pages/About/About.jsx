@@ -10,7 +10,7 @@ const About = () => {
       </div>
       <div className="about-main-container">
         <div className="banner-slider">
-          <div className="deepika-slide">
+          <div className="ready-slide">
             {/* <p id="go-to-home">
               &#11160; Go to <Link to={"/"}>Home</Link> page
             </p> */}
@@ -89,7 +89,6 @@ const About = () => {
             <img src="/images/members/deepika.png" alt="deepika" />
             <p>Deepika Yadav</p>
             <p>B.Tech(CSE)</p>
-            <p>I Love You...❤️😍😘</p>
           </div>
           <div className="member-img tulsi">
             <img src="/images/members/tulsi.png" alt="tulsi" />
@@ -97,6 +96,7 @@ const About = () => {
             <p>B.Tech(CSE)</p>
           </div>
         </div>
+        <p id="last-para">Happy to see you here...😊🚀</p>
       </div>
     </>
   );

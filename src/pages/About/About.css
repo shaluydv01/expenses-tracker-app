@@ -48,9 +48,6 @@
   font-size: 24px;
 } */
 
-.about-img-container {
-}
-
 .about-container-image {
   width: 400px;
   height: 300px;
@@ -131,11 +128,6 @@
 
 /*------------------ team section---------------------- */
 
-.team-section h1 {
-  text-align: center;
-  color: #037e89;
-  font-size: 30px;
-}
 .team-section {
   display: flex;
   justify-content: center;
@@ -161,4 +153,83 @@
 #creators-header:hover {
   color: black;
   transform: scale(1.1);
+}
+
+/*----------------Responsiveness----------------------*/
+
+@media (max-width: 412px) {
+  .about-mission-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about-main-container{
+    padding-bottom: 32px;
+    padding-top: 7rem;
+  }
+
+  .ready-slide p{
+    padding: 0 1rem;
+  }
+
+  .about-text-container h2 {
+    font-size: 26px;
+  }
+
+  .about-text-container .about-para {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: justify;
+    padding-right: 0;
+  }
+
+  .about-container-image {
+    width: 300px;
+    height: 200px;
+  }
+
+  .feature-container h1 {
+    font-size: 26px;
+  }
+
+  .main-features {
+    flex-direction: column;
+    margin: 0 8px 8px;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-feature1{
+    margin-top: 16px;
+    width: 90%;
+  }
+
+  .card-feature1 img{
+    width: 100%;
+  }
+
+  #creators-header {
+    margin: 0 8px;
+    font-size: 22px;
+  }
+
+  .team-section {
+    gap: 10px;
+    padding-bottom: 10%;
+  }
+  
+  .team-section img {
+    width: 64px;
+    border-radius: 50%;
+  }
+
+  .member-img p{
+    font-size: 10px;
+  }
+
+  #last-para{
+    font-weight: 700;
+    text-decoration: underline;
+  }
 }
