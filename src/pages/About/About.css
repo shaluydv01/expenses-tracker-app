@@ -158,17 +158,22 @@
 /*----------------Responsiveness----------------------*/
 
 @media (max-width: 412px) {
+  .about-header {
+    background-color: #037E89;
+    color: #fff;
+  }
+
   .about-mission-container {
     flex-direction: column;
     gap: 16px;
   }
 
-  .about-main-container{
+  .about-main-container {
     padding-bottom: 32px;
     padding-top: 7rem;
   }
 
-  .ready-slide p{
+  .ready-slide p {
     padding: 0 1rem;
   }
 
@@ -200,12 +205,13 @@
     justify-content: center;
   }
 
-  .card-feature1{
+  .card-feature1 {
     margin-top: 16px;
     width: 90%;
+    border: 2px solid #626262;
   }
 
-  .card-feature1 img{
+  .card-feature1 img {
     width: 100%;
   }
 
@@ -218,17 +224,17 @@
     gap: 10px;
     padding-bottom: 10%;
   }
-  
+
   .team-section img {
     width: 64px;
     border-radius: 50%;
   }
 
-  .member-img p{
+  .member-img p {
     font-size: 10px;
   }
 
-  #last-para{
+  #last-para {
     font-weight: 700;
     text-decoration: underline;
   }
