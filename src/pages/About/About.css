@@ -76,9 +76,11 @@
   color: #037e89;
 }
 .card-feature1 {
-  border: 2px solid #037e89;
+  /* border: 2px solid #037e89; */
+  border-radius: 8px;
   width: 20%;
   background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card-feature1:hover {

@@ -89,6 +89,7 @@ const About = () => {
             <img src="/images/members/deepika.png" alt="deepika" />
             <p>Deepika Yadav</p>
             <p>B.Tech(CSE)</p>
+            <p>I Love You...❤️😍😘</p>
           </div>
           <div className="member-img tulsi">
             <img src="/images/members/tulsi.png" alt="tulsi" />
